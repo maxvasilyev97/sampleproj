@@ -11,12 +11,16 @@ export default function App() {
     setName('имя2');
     setPerson({name: 'сас', age: 20})
   }
+
+  const changeText = (newtext) => {
+    setName(newtext)
+  }
   
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text>Введи имя</Text>
-        <TextInput style={styles.input}/>
+        <TextInput style={styles.input} onChangeText={changeText}/>
         <Text>Введи возраст</Text>
         <TextInput style={styles.input}/>
         <Text style={styles.boldText}>Имя: {name}, возраст: {age}</Text>
