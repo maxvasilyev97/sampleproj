@@ -1,12 +1,12 @@
 import React from 'react';
 import Login from './Views/login';
-import Form from './Views/form';
 import Qr from './Views/qr';
+import IdForm from './Views/idfrom';
 
 export default function App() {  
   return (
-    <Login />
-    // <Form />
-    // <Qr />
+    // <Login /> //Окно входа
+    // <Qr /> //QR
+    <IdForm /> //Ввод номера    
   );
 }
