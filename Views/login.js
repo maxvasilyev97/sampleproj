@@ -10,7 +10,6 @@ export default function Login() {
           <TextInput
             style={styles.input}
             placeholder = '123456'
-            //textAlign = 'center'
           />
           <Text style={styles.text}>Пароль</Text>
           <TextInput
@@ -72,6 +71,5 @@ const styles = StyleSheet.create({
     margin: 10, //отступ снаружи
     marginTop: 30,
     borderRadius: 15,
-    //top: 20,
   }
 });

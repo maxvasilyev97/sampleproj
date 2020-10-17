@@ -41,10 +41,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#005B9C",
         padding: 11, //отступ внутри
-        margin: 10, //отступ снаружи
-        //marginTop: 20,
+        margin: 10, //отступ снаружи        
         borderRadius: 15,
-        width: 300
-        //top: 20,
+        width: 300        
     }
 });

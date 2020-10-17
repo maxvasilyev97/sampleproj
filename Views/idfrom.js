@@ -7,8 +7,7 @@ export default function Form() {
             <Text style={styles.text}>Введите номер объекта</Text>            
             <TextInput
                 style={styles.input}
-                placeholder = '123456789'
-                //textAlign = 'center'
+                placeholder = '123456789'                
             />
             <View style={styles.butcontainer}>    
                 <TouchableOpacity
@@ -52,37 +51,22 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'white',
     },
-    button1: {
-        // alignItems: "center",
-        backgroundColor: "#005B9C",
-        // padding: 11, //отступ внутри
-        // margin: 10, //отступ снаружи
-        // //marginTop: 20,
+    button1: {        
+        backgroundColor: "#005B9C",        
         borderRadius: 15,
-        width: 150,
-        // //top: 20,
+        width: 150,       
         paddingHorizontal:20,
-        paddingVertical:15,
-        //backgroundColor:'#c37dc6',
-        marginRight:20,
-        // borderRadius:8
+        paddingVertical:15,        
+        marginRight:20,        
     },
-    button2: {
-        // alignItems: "center",
-        backgroundColor: "#005B9C",
-        // padding: 11, //отступ внутри
-        // margin: 10, //отступ снаружи
-        // //marginTop: 20,
+    button2: {        
+        backgroundColor: "#005B9C",        
         borderRadius: 15,
-        width: 150,
-        // //top: 20,
+        width: 150,        
         paddingHorizontal:20,
-        paddingVertical:15,
-        //backgroundColor:'#27ddc5',
-        // borderRadius:8
+        paddingVertical:15,        
     },
-    butcontainer: {
-        //flex: 1,
+    butcontainer: {        
         flexDirection: 'row',
         justifyContent: 'flex-end',
         alignItems: 'center',
