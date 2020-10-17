@@ -20,10 +20,24 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text>Введи имя</Text>
-        <TextInput style={styles.input} onChangeText={changeText}/>
+        <TextInput 
+          style={styles.input}
+          onChangeText={changeText}
+          placeholder = 'имя'        
+        />
         <Text>Введи возраст</Text>
-        <TextInput style={styles.input}/>
+        <TextInput
+          style={styles.input}
+          onChangeText={(newage) => setAge(newage)}
+          placeholder = '99'
+          keyboardType='numeric'
+        />
         <Text style={styles.boldText}>Имя: {name}, возраст: {age}</Text>
+        <TextInput
+          style={styles.input}
+          multiline
+          placeholder = 'много строк'
+        />
       </View>
       <View style={styles.body}>
         <Text>{name}</Text>
@@ -58,6 +72,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#777',
     padding: 8,
-    margin: 10
+    margin: 10,
+    width: 200,
   }
 });
