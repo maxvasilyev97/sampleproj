@@ -87,5 +87,6 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
         backgroundColor: '#fff',
+        marginTop: 200
     },
 });
