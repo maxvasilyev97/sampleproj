@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
-export default function Review() {
+export default function Form() {
     return(
         <View style={style.container}>
-            <Text>ревью</Text>
+            <Text>Form</Text>
         </View>
     )
 }

@@ -1,10 +1,12 @@
 import React from 'react';
-import Login from './screens/login';
-import Review from './screens/reviewDetails';
-import Home from './screens/home';
+import Login from './Views/login';
+import Form from './Views/form';
+import Qr from './Views/qr';
 
 export default function App() {  
   return (
-    <Home />
+    <Login />
+    // <Form />
+    // <Qr />
   );
 }
