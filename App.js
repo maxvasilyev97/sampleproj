@@ -8,33 +8,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Screen1 from './Views/screen1';
 
-// export default function App() {  
-//   return (
-//     // <Login /> //Окно входа
-//     // <Qr /> //QR
-//     <IdForm /> //Ввод номера    
-//   );
-// }
-
-//Содержимое первого экрана
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Первый экран текст</Text>
-      <Button
-        title="Перейти на второй экран"
-        onPress={() => {
-          /* 1. Navigate to the Details route with params */
-          navigation.navigate('Details', {
-            itemId: 86,
-            otherParam: 'я передаюсь с первого экрана',
-          });
-        }}
-      />
-    </View>
-  );
-}
-
 //Содержимое второго экрана
 function DetailsScreen({ route, navigation }) {
   /* 2. Get the param */
@@ -76,18 +49,19 @@ function App() {
           name="Home"
           component={Login}
           options={{
-            title: 'Первый экран',
+            headerShown: false,
+            title: 'Авторизация',
             headerTitle: props => <LogoTitle {...props} />
           }}
         />
         <Stack.Screen
           name="Details"
-          component={DetailsScreen}
+          component={Qr}
           initialParams={{
             itemId: 42
           }}
           options={{
-            title: 'Второй экран',
+            title: 'QR',
             headerStyle: {
               backgroundColor: '#005B9C',
               headerTintColor: '#fff',

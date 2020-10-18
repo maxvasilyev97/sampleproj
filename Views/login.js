@@ -2,9 +2,23 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {StyleSheet, View, Text, TextInput, Image, TouchableOpacity} from 'react-native';
 
+function ShowImg() {
+  return (
+    <Image
+      style={{
+        width: 225,
+        height: 66,
+        marginBottom: 20,
+      }}
+      source={require('../img/logo.svg')}
+    />
+  );
+}
+
 export default function Login({ navigation }) {  
     return(
       <View style={styles.container}>
+        <ShowImg />
         <Text style={styles.title}>Вход</Text>
         <View style={styles.sign}>
           <Text style={styles.text}>Логин</Text>
