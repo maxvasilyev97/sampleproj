@@ -1,10 +1,8 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {StyleSheet, View, Text, TextInput, Image, TouchableOpacity} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
-export default function Login() {  
+export default function Login({ navigation }) {  
     return(
       <View style={styles.container}>
         <Text style={styles.title}>Вход</Text>
@@ -23,7 +21,13 @@ export default function Login() {
           <View>
           <TouchableOpacity
             style={styles.button}
-            //onPress={onPress}
+            onPress={() => {
+              /* 1. Navigate to the Details route with params */
+              navigation.navigate('Details', {
+                itemId: 86,
+                otherParam: 'я передаюсь с первого экрана',
+              });
+            }}
           >
             <Text style={styles.btext}>Войти</Text>
           </TouchableOpacity>
