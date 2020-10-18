@@ -35,7 +35,7 @@ export default function Qr({ navigation }) {
             <TouchableOpacity
             style={styles.button}
             onPress={() => {                
-                navigation.navigate('TaskScreen');
+                navigation.navigate('TicketsScreen');
             }}
             >
                 <Text style={styles.btext}>Задачи</Text>

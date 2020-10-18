@@ -4,6 +4,7 @@ import Login from './Views/login';
 import Qr from './Views/qr';
 import Task from './Views/task';
 import Map from './Views/map';
+import Tickets from './Views/tickets';
 import { Button, View, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -49,6 +50,26 @@ function App() {
           }}
           options={{
             title: 'QR',
+            headerTitle: props => <ShowAvatar {...props} />,
+            headerBackImage: ShowHome,
+            headerStyle: {
+              backgroundColor: '#005B9C',
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+                color: 'white',
+              },
+            },
+          }}
+        />
+        <Stack.Screen
+          name="TicketsScreen"
+          component={Tickets}
+          initialParams={{
+            itemId: 42
+          }}
+          options={{
+            title: 'Задачи',
             headerTitle: props => <ShowAvatar {...props} />,
             headerBackImage: ShowHome,
             headerStyle: {
