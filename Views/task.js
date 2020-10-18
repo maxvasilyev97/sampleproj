@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {StyleSheet, View, Text, TouchableOpacity, TextInput} from 'react-native';
+import Background from '../img/bg.png';
 
 export default function Form({ navigation }) {
     return(
@@ -26,15 +27,19 @@ export default function Form({ navigation }) {
             <View style={styles.butcontainer}>    
                 <TouchableOpacity
                 style={styles.button1}
-                //onPress={onPress}
+                onPress={() => {              
+                    navigation.navigate('QrScreen');
+                }}
                 >
-                    <Text style={styles.btext}>Отмена</Text>
+                    <Text style={styles.btext}>Назад</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                 style={styles.button2}
-                //onPress={onPress}
+                onPress={() => {                
+                    navigation.navigate('MapScreen');
+                }}
                 >
-                    <Text style={styles.btext}>Далее</Text>
+                    <Text style={styles.btext}>Открыть на карте</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -43,6 +48,7 @@ export default function Form({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {    
+        backgroundImage: `url(${Background})`,
         alignItems: 'center', //выравнивание по горизонитали
         flex: 1,
         justifyContent: 'center' //выравнивание по вертикали
@@ -56,11 +62,12 @@ const styles = StyleSheet.create({
         width: 200,
       },
     ticket: {
-    borderWidth: 2,
-    borderColor: '#005B9C',
-    borderRadius: 15,
-    padding: 20, //отступ внутри
-    margin: 20, //отступ снаружи
+        backgroundColor: "#FFF",
+        borderWidth: 2,
+        borderColor: '#005B9C',
+        borderRadius: 15,
+        padding: 20, //отступ внутри
+        margin: 20, //отступ снаружи
     },
     title: {
         fontSize: 36,
@@ -79,7 +86,7 @@ const styles = StyleSheet.create({
     button1: {        
         backgroundColor: "#005B9C",        
         borderRadius: 15,
-        width: 150,       
+        width: 200,       
         paddingHorizontal:20,
         paddingVertical:15,        
         marginRight:20,        
@@ -87,7 +94,7 @@ const styles = StyleSheet.create({
     button2: {        
         backgroundColor: "#005B9C",        
         borderRadius: 15,
-        width: 150,        
+        width: 200,        
         paddingHorizontal:20,
         paddingVertical:15,        
     },
@@ -101,8 +108,7 @@ const styles = StyleSheet.create({
     butcontainer: {        
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        alignItems: 'center',
-        backgroundColor: '#fff',
+        alignItems: 'center',        
         marginTop: 100
     },
 });

@@ -3,10 +3,10 @@ import * as React from 'react';
 import Login from './Views/login';
 import Qr from './Views/qr';
 import Task from './Views/task';
+import Map from './Views/map';
 import { Button, View, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Screen1 from './Views/screen1';
 
 const Stack = createStackNavigator();
 
@@ -69,6 +69,26 @@ function App() {
           }}
           options={{
             title: 'Заявка',
+            headerTitle: props => <ShowAvatar {...props} />,
+            headerBackImage: ShowHome,
+            headerStyle: {
+              backgroundColor: '#005B9C',
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+                color: 'white',
+              },
+            },
+          }}
+        />
+        <Stack.Screen
+          name="MapScreen"
+          component={Map}
+          initialParams={{
+            itemId: 42
+          }}
+          options={{
+            title: 'Карта',
             headerTitle: props => <ShowAvatar {...props} />,
             headerBackImage: ShowHome,
             headerStyle: {

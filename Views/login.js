@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {StyleSheet, View, Text, TextInput, Image, TouchableOpacity} from 'react-native';
+import Background from '../img/bg.png';
 
 function ShowImg() {
   return (
@@ -49,11 +50,13 @@ export default function Login({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {    
+    backgroundImage: `url(${Background})`, 
     alignItems: 'center', //выравнивание по горизонитали
     flex: 1,
     justifyContent: 'center' //выравнивание по вертикали
   },
   sign: {
+    backgroundColor: "#FFF",
     borderWidth: 2,
     borderColor: '#005B9C',
     borderRadius: 15,
