@@ -2,41 +2,28 @@ import 'react-native-gesture-handler';
 import * as React from 'react';
 import Login from './Views/login';
 import Qr from './Views/qr';
-import IdForm from './Views/idfrom';
+import Task from './Views/task';
 import { Button, View, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Screen1 from './Views/screen1';
 
-//Содержимое второго экрана
-function DetailsScreen({ route, navigation }) {
-  /* 2. Get the param */
-  const { itemId , otherParam} = route.params;
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Второй экран текст</Text>
-      <Text>itemId: {JSON.stringify(itemId)}</Text>
-      <Text>otherParam: {JSON.stringify(otherParam)}</Text>
-      <Button
-        title="Перейти на второй экран снова"
-        onPress={() =>
-          navigation.push('Details', {
-            itemId: Math.floor(Math.random() * 100),
-          })
-        }
-      />
-      <Button title="Домой" onPress={() => navigation.navigate('Home')} />
-      <Button title="Назад" onPress={() => navigation.goBack()} />
-    </View>
-  );
-}
 const Stack = createStackNavigator();
 
-function LogoTitle() {
+function ShowAvatar() {
   return (
     <Image
       style={{ width: 50, height: 50 }}
-      source={require('./img/logo.svg')}
+      source={require('./img/avatar.png')}
+    />
+  );
+}
+
+function ShowHome() {
+  return (
+    <Image
+      style={{ width: 50, height: 50 }}
+      source={require('./img/home.svg')}
     />
   );
 }
@@ -46,7 +33,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
-          name="Home"
+          name="LoginScreen"
           component={Login}
           options={{
             headerShown: false,
@@ -55,13 +42,35 @@ function App() {
           }}
         />
         <Stack.Screen
-          name="Details"
+          name="QrScreen"
           component={Qr}
           initialParams={{
             itemId: 42
           }}
           options={{
             title: 'QR',
+            headerTitle: props => <ShowAvatar {...props} />,
+            headerBackImage: ShowHome,
+            headerStyle: {
+              backgroundColor: '#005B9C',
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+                color: 'white',
+              },
+            },
+          }}
+        />
+        <Stack.Screen
+          name="TaskScreen"
+          component={Task}
+          initialParams={{
+            itemId: 42
+          }}
+          options={{
+            title: 'Заявка',
+            headerTitle: props => <ShowAvatar {...props} />,
+            headerBackImage: ShowHome,
             headerStyle: {
               backgroundColor: '#005B9C',
               headerTintColor: '#fff',

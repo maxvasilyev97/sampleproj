@@ -1,9 +1,24 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 
-export default function Qr() {
+function ShowImg() {
+    return (
+      <Image
+        style={{
+          width: 230,
+          height: 230,
+          marginBottom: 30,
+        }}
+        source={require('../img/qr.svg')}
+      />
+    );
+  }
+
+export default function Qr({ navigation }) {
     return(
         <View style={styles.container}>
+            <ShowImg />
             <TouchableOpacity
             style={styles.button}
             //onPress={onPress}
@@ -18,7 +33,9 @@ export default function Qr() {
             </TouchableOpacity>
             <TouchableOpacity
             style={styles.button}
-            //onPress={onPress}
+            onPress={() => {                
+                navigation.navigate('TaskScreen');
+            }}
             >
                 <Text style={styles.btext}>Задачи</Text>
             </TouchableOpacity>

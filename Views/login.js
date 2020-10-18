@@ -35,12 +35,8 @@ export default function Login({ navigation }) {
           <View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => {
-              /* 1. Navigate to the Details route with params */
-              navigation.navigate('Details', {
-                itemId: 86,
-                otherParam: 'я передаюсь с первого экрана',
-              });
+            onPress={() => {              
+              navigation.navigate('QrScreen');
             }}
           >
             <Text style={styles.btext}>Войти</Text>
